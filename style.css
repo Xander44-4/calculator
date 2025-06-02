@@ -6,7 +6,7 @@
 
 
 body {
-    background-color: blue;
+    background-color: white;
 }
 
 header {
@@ -49,6 +49,25 @@ nav ul a:hover {
 
 }
 
+nav ul button {
+    border: 0;
+    background-color: rgb(184, 184, 184);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+}
+
+nav ul button:hover {
+    border: 0;
+    background-color: rgb(126, 126, 126);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+}
+
+
 main {
     display: flex;
     justify-content: center;
@@ -62,11 +81,12 @@ main h1 {
 
 .calculator {
     margin-top: 20px;
-    background-color: black;
+    background-color: white;
     width: 20vw;
     height: 70vh;
     border-radius: 20px;
     justify-items: center;
+    box-shadow: 0 8px 32px 0 rgb(0, 0, 0, 0.37);
 
 }
 
@@ -79,8 +99,8 @@ main h1 {
     font-size: 20px;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 8px 32px 0 rgba(255, 0, 0, 0.37);
-    text-align: center;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.20);
+
 }
 
 .display {
@@ -88,6 +108,8 @@ main h1 {
     justify-content: flex-end;
     flex-direction: column;
     margin: 20px 0;
+    background-color: white;
+    border-radius: 25px;
 }
 
 form input.results {
@@ -99,5 +121,31 @@ form .display input {
     cursor: no-drop;
     background-color: transparent;
     box-shadow: none;
+
+}
+
+form .display {
+    padding: 10px;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: row;
+}
+
+.textred {
+    color: red;
+}
+
+
+
+form input.red {
+
     color: white;
+    background-color: red;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease;
 }
