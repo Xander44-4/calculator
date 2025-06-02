@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'popppins', sans-serif;
+}
+
+
+body {
+    background-color: blue;
+}
+
+header {
+    justify-items: center;
+    padding: 20px;
+
+}
+
+nav {
+
+    justify-items: center;
+    padding: 20px;
+    background-color: beige;
+    border: 1px solid none;
+    border-radius: 50px;
+    width: 30vw;
+    font-weight: bold;
+
+}
+
+nav ul {
+    display: flex;
+    justify-items: center;
+    gap: 50px;
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+nav ul a:hover {
+    text-decoration: none;
+    color: red;
+    transform: scale(1.2);
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main h1 {
+    margin-top: 20px;
+}
+
+.calculator {
+    margin-top: 20px;
+    background-color: black;
+    width: 20vw;
+    height: 70vh;
+    border-radius: 20px;
+    justify-items: center;
+
+}
+
+.calculator form input {
+    border: 0;
+    outline: 0;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 32px 0 rgba(255, 0, 0, 0.37);
+    text-align: center;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+form input.results {
+    width: 105px;
+}
+
+form .display input {
+    width: 93%;
+    cursor: no-drop;
+    background-color: transparent;
+    box-shadow: none;
+    color: white;
+}
