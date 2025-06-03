@@ -4,27 +4,49 @@
     font-family: 'popppins', sans-serif;
 }
 
+:root {
+    --color-rojo: red;
+    --color-blanco: white;
+    --color-negro: black;
+    --color-gris-hover: rgb(126, 126, 126);
+    --sombra-principal: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --sombra-botones: 0 4px 16px 0 rgba(0, 0, 0, 0.20);
+    --sombra-rojo: 0 16px 32px rgba(0, 0, 0, 0.25);
+}
+
+.darkmode {
+    --color-rojo: rgb(0, 0, 255);
+    --color-blanco: rgb(30, 30, 30);
+    --color-negro: black;
+    --color-gris-hover: rgb(126, 126, 126);
+    --sombra-principal: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --sombra-botones: 0 4px 16px 0 rgba(0, 0, 0, 0.20);
+    --sombra-rojo: 0 16px 32px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
 
 body {
-    background-color: white;
+    background-color: var(--color-blanco);
 }
 
 header {
     justify-items: center;
     padding: 20px;
-
 }
 
 nav {
-
     justify-items: center;
     padding: 20px;
-    background-color: red;
+    background-color: var(--color-rojo);
     border: 1px solid none;
     border-radius: 50px;
     width: 30vw;
     font-weight: bold;
-
 }
 
 nav ul {
@@ -36,7 +58,7 @@ nav ul {
 
 nav ul a {
     text-decoration: none;
-    color: white;
+    color: var(--color-blanco);
     font-size: 1.2rem;
     transition: transform 0.3s ease, color 0.3s ease;
     display: inline-block;
@@ -44,14 +66,13 @@ nav ul a {
 
 nav ul a:hover {
     text-decoration: none;
-    color: black;
+    color: var(--color-negro);
     transform: scale(1.2);
-
 }
 
 nav ul button {
     border: 0;
-    background-color: white;
+    background-color: var(--color-blanco);
     cursor: pointer;
     width: 24px;
     height: 24px;
@@ -59,14 +80,8 @@ nav ul button {
 }
 
 nav ul button:hover {
-    border: 0;
-    background-color: rgb(126, 126, 126);
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-    border-radius: 100%;
+    background-color: var(--color-gris-hover);
 }
-
 
 main {
     display: flex;
@@ -81,13 +96,12 @@ main h1 {
 
 .calculator {
     margin-top: 20px;
-    background-color: white;
+    background-color: var(--color-blanco);
     width: 20vw;
     height: 70vh;
     border-radius: 20px;
     justify-items: center;
-    box-shadow: 0 8px 32px 0 rgb(0, 0, 0, 0.37);
-
+    box-shadow: var(--sombra-principal);
 }
 
 .calculator form input {
@@ -99,8 +113,7 @@ main h1 {
     font-size: 20px;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.20);
-
+    box-shadow: var(--sombra-botones);
 }
 
 .display {
@@ -108,7 +121,7 @@ main h1 {
     justify-content: flex-end;
     flex-direction: column;
     margin: 20px 0;
-    background-color: white;
+    background-color: var(--color-blanco);
     border-radius: 25px;
 }
 
@@ -121,7 +134,6 @@ form .display input {
     cursor: no-drop;
     background-color: transparent;
     box-shadow: none;
-
 }
 
 form .display {
@@ -134,18 +146,15 @@ form .display {
 }
 
 .textred {
-    color: red;
+    color: var(--color-rojo);
 }
 
-
-
 form input.red {
-
-    color: white;
-    background-color: red;
+    color: var(--color-blanco);
+    background-color: var(--color-rojo);
     border: 0;
     outline: 0;
     cursor: pointer;
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--sombra-rojo);
     transition: box-shadow 0.3s ease;
 }

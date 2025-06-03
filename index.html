@@ -6,18 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="main.js" defer></script>
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'"">
+    <noscript>
+        <link href=" https://fonts.googleapis.com/css2?family=Poppins&display=swap" ">
+    </noscript>
+
+    <script src=" main.js" defer>
+    </script>
 </head>
 
-<body>
+<body class="">
     <header>
         <nav>
             <ul>
                 <li><a href="#">Calculator</a></li>
                 <li><a href="history.html">History</a></li>
-                <button><i class="fa-solid fa-moon"></i></button>
+                <button id="changeMode"><i class="fa-solid fa-moon"></i></button>
             </ul>
         </nav>
     </header>

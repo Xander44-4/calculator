@@ -1,7 +1,32 @@
-var valueToCalculate = document.getElementsByName('display')
-var btnresult = document.getElementById('btnresult')
-var displayLastResult = document.getElementsByName('last_result')
+const valueToCalculate = document.getElementsByName('display')
+const btnresult = document.getElementById('btnresult')
+const displayLastResult = document.getElementsByName('last_result')
 var lastResult
+const changeModeBtn = document.getElementById('changeMode');
+var darkmode = localStorage.getItem('darkmode')
+
+
+function enableDarkMode() {
+    document.body.classList.add('darkmode')
+    localStorage.setItem('darkmode', 'active')
+}
+
+function disableDarkMode() {
+    document.body.classList.remove('darkmode')
+    localStorage.setItem('darkmode', null)
+}
+
+if (darkmode === "active") { enableDarkMode() }
+
+
+changeModeBtn.addEventListener('click', function () {
+    darkmode = localStorage.getItem('darkmode')
+    darkmode == "active" ? disableDarkMode() : enableDarkMode()
+});
+
+
+
+
 
 btnresult.addEventListener('click', function () {
     var expression = valueToCalculate[0].value;
