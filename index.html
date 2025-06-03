@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -29,9 +30,9 @@
         <section class="calculator">
             <form action="">
                 <div class="display">
-                    <input type="text" name="display" id="" disabled>
+                    <input type="text" name="display" id="">
                     <hr>
-                    <input type="text" name="last_result" id="" disabled>
+                    <input type="text" name="last_result" id="">
                 </div>
 
                 <div>
@@ -63,8 +64,7 @@
                 </div>
 
                 <div>
-                    <input type="button" value="Result" class="results red"
-                        onclick="display.value = eval(display.value)">
+                    <input type="button" value="Result" class="results red" id="btnresult">
                     <input type="button" value="0" onclick="display.value += '0' ">
                     <input type="button" value="." onclick="display.value += '.' " class="red">
                 </div>
