@@ -76,11 +76,12 @@ nav ul a:hover {
 
 nav ul button {
     border: 0;
-    background-color: var(--color-texto);
+    background-color: var(--color-texto-negro);
     cursor: pointer;
     width: 24px;
     height: 24px;
     border-radius: 100%;
+    color: var(--color-blanco);
 }
 
 nav ul button:hover {
@@ -100,6 +101,8 @@ main h1 {
 }
 
 .calculator {
+
+
     margin-top: 20px;
     background-color: var(--color-blanco);
     width: 20vw;
@@ -108,6 +111,11 @@ main h1 {
     justify-items: center;
     box-shadow: var(--sombra-principal);
 }
+
+.numbers {
+    padding-left: 20px;
+}
+
 
 .calculator form input {
     border: 0;
@@ -122,10 +130,11 @@ main h1 {
 }
 
 .display {
-    display: flex;
-    justify-content: flex-end;
+
+    justify-content: center;
     flex-direction: column;
-    margin: 20px 0;
+    margin: 20px 10px 0 0;
+
     background-color: var(--color-blanco);
     border-radius: 25px;
 }
@@ -139,6 +148,7 @@ form .display input {
     cursor: no-drop;
     background-color: transparent;
     box-shadow: none;
+    color: var(--color-texto-negro);
 }
 
 form .display {
@@ -165,72 +175,108 @@ form input.red {
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
     .calculator {
-        margin-top: 20px;
-        background-color: var(--color-blanco);
-        width: 70vw;
-        height: 60vh;
-        border-radius: 20px;
-        justify-items: center;
-        box-shadow: var(--sombra-principal);
+        width: 50vw;
+        height: 50vh;
     }
 
     nav {
-        justify-items: center;
-        padding: 20px;
-        background-color: var(--color-rojo);
-        border: 1px solid none;
-        border-radius: 50px;
+        width: 50vw;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .calculator {
+        width: 50vw;
+        height: 50vh;
+    }
+
+    nav {
+        width: 50vw;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .calculator {
         width: 70vw;
-        font-weight: bold;
+        height: 60vh;
+    }
+
+    nav {
+        width: 70vw;
     }
 
     nav ul a {
-        text-decoration: none;
-        color: var(--color-texto);
         font-size: 1rem;
-        transition: transform 0.3s ease, color 0.3s ease;
-        display: inline-block;
+        gap: 20px;
+    }
+
+    .calculator {
+        padding: 10px;
+        align-items: center;
     }
 
     .calculator form input {
-        border: 0;
-        outline: 0;
-        width: 40px;
-        height: 40px;
-        margin: 10px;
+        height: 5vh;
+        width: 10vw;
         font-size: 20px;
         border-radius: 10px;
         cursor: pointer;
         box-shadow: var(--sombra-botones);
     }
 
-    form .display input {
-        width: 100%;
-        box-shadow: none;
+    form input.results {
+        width: calc(100px + 1vw);
     }
 
-    form input.results {
-        width: 105px;
+
+    form .display input {
+        box-shadow: none;
+        width: 100%;
     }
 
 }
 
-@media (max-width: 320px) {}
 
-
-
-
-
-/* @media (max-width: 800px) {
+@media (max-width: 376px) {
     .calculator {
-        margin-top: 20px;
-        background-color: var(--color-blanco);
-        width: 20vw;
-        height: 70vh;
-        border-radius: 20px;
-        justify-items: center;
-        box-shadow: var(--sombra-principal);
+        width: 70vw;
+        height: 50vh;
     }
-} */
+
+    nav {
+        width: 60vw;
+        font-size: 0.8rem;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .calculator form input {
+        border: 0;
+        outline: 0;
+        width: 10vw;
+        height: 4vh;
+        margin: 5px;
+        font-size: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: var(--sombra-botones);
+    }
+
+    form input.results {
+        width: calc(85px + 1vw);
+    }
+
+
+    form .display input {
+        box-shadow: none;
+        width: 100%;
+    }
+
+}

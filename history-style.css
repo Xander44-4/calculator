@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -30,51 +31,63 @@
 
 body {
     background-color: var(--color-blanco);
+    min-height: 100vh;
 }
 
 header {
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     padding: 20px;
+    width: 100%;
 }
 
 nav {
-    justify-items: center;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px;
     background-color: var(--color-rojo);
     border: 1px solid transparent;
     border-radius: 50px;
-    width: 30vw;
+    width: min(90vw, 500px);
+    max-width: 500px;
     font-weight: bold;
     box-shadow: var(--sombra-botones);
 }
 
 nav ul {
     display: flex;
-    justify-items: center;
-    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(20px, 5vw, 50px);
     list-style: none;
+    width: 100%;
 }
 
 nav ul a {
     text-decoration: none;
     color: var(--color-texto);
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     transition: transform 0.3s ease, color 0.3s ease;
     display: inline-block;
+    white-space: nowrap;
 }
 
 nav ul a:hover {
     color: var(--color-negro);
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 nav ul button {
     border: 0;
-    background-color: var(--color-texto);
+    background-color: var(--color-texto-negro);
     cursor: pointer;
-    width: 24px;
-    height: 24px;
+    width: clamp(20px, 4vw, 24px);
+    height: clamp(20px, 4vw, 24px);
     border-radius: 100%;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+    color: var(--color-blanco);
 }
 
 nav ul button:hover {
@@ -82,14 +95,29 @@ nav ul button:hover {
 }
 
 main {
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+
+.container button {
+    height: 6vh;
     text-align: center;
 }
 
 main h1 {
     color: var(--color-texto-negro);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
-
 
 .darkmodeHistoryBox {
     padding: 0.5rem;
@@ -97,12 +125,14 @@ main h1 {
 }
 
 .history_box {
-    height: 70vh;
-    width: 20vw;
+    height: clamp(300px, 60vh, 70vh);
+    width: min(90vw, 320px);
+    max-width: 320px;
     border-radius: 15px;
     margin-top: 10px;
     box-shadow: var(--sombra-botones);
     background-color: var(--color-blanco);
+    overflow-y: auto;
 }
 
 .delbtn {
@@ -110,16 +140,159 @@ main h1 {
     border: 0;
     background-color: var(--color-rojo);
     color: var(--color-texto);
-    padding: 5px;
+    padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
     border-radius: 15px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
     transition: transform 0.3s ease, color 0.3s ease;
     cursor: pointer;
     box-shadow: var(--sombra-botones);
+    min-width: 80px;
 }
 
 .delbtn:hover {
     color: var(--color-texto);
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    nav {
+        width: min(95vw, 400px);
+        padding: 12px 20px;
+    }
+
+    nav ul {
+        gap: clamp(15px, 4vw, 30px);
+    }
+
+    nav ul a {
+        font-size: clamp(0.8rem, 2.2vw, 1rem);
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .history_box {
+        width: min(95vw, 280px);
+        height: clamp(250px, 50vh, 60vh);
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    nav {
+        width: 95vw;
+        padding: 10px 15px;
+        border-radius: 25px;
+    }
+
+    nav ul {
+        gap: clamp(10px, 3vw, 20px);
+        flex-wrap: wrap;
+    }
+
+    nav ul a {
+        font-size: clamp(0.7rem, 3vw, 0.9rem);
+    }
+
+    nav ul button {
+        width: clamp(18px, 5vw, 22px);
+        height: clamp(18px, 5vw, 22px);
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    main h1 {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        margin-bottom: 10px;
+    }
+
+    .history_box {
+        width: 95vw;
+        height: clamp(200px, 40vh, 50vh);
+        margin-top: 5px;
+    }
+
+    .delbtn {
+        padding: clamp(6px, 2vw, 10px) clamp(10px, 3vw, 16px);
+        font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+        margin-top: 5px;
+    }
+
+    .darkmodeHistoryBox {
+        padding: 0.3rem;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    nav {
+        padding: 8px 12px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav ul a {
+        font-size: 0.7rem;
+    }
+
+    .history_box {
+        width: 98vw;
+        height: 35vh;
+    }
+
+    .delbtn {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+        min-width: 60px;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    header {
+        padding: 30px;
+    }
+
+    nav {
+        width: min(40vw, 600px);
+        padding: 20px 30px;
+    }
+
+    nav ul {
+        gap: 60px;
+    }
+
+    nav ul a {
+        font-size: 1.3rem;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .history_box {
+        width: min(25vw, 350px);
+        height: 55vh;
+    }
+
+    .delbtn {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+    }
 }
