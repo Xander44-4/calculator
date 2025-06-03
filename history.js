@@ -63,8 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         list.forEach(entry => {
             const item = document.createElement('div');
             item.textContent = entry;
-            item.style.padding = '0.5rem';
-            item.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+            item.classList.add('darkmodeHistoryBox');
             historyContainer.appendChild(item);
         });
     }
