@@ -15,18 +15,11 @@ function disableDarkMode() {
     document.body.classList.remove('darkmode')
     localStorage.setItem('darkmode', null)
 }
-
-if (darkmode === "active") { enableDarkMode() }
-
-
 changeModeBtn.addEventListener('click', function () {
     darkmode = localStorage.getItem('darkmode')
     darkmode == "active" ? disableDarkMode() : enableDarkMode()
 });
-
-
-
-
+if (darkmode === "active") { enableDarkMode() }
 
 btnresult.addEventListener('click', function () {
     var expression = valueToCalculate[0].value;
@@ -61,10 +54,16 @@ btnresult.addEventListener('click', function () {
             console.log('Error parsing history, resetting:', e);
         }
 
-        historyList.push(expression + ' = ' + result);
-        localStorage.setItem('history', JSON.stringify(historyList));
+        if (typeof expression === 'undefined' || typeof result === 'undefined') {
+            console.log('error')
+        }
+        else {
+            historyList.push(expression + ' = ' + result);
+            localStorage.setItem('history', JSON.stringify(historyList));
+            console.log('Calculation successful:', lastResult, '=', result);
+        }
 
-        console.log('Calculation successful:', lastResult, '=', result);
+
 
     } catch (e) {
 
